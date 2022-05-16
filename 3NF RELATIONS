@@ -1,0 +1,19 @@
+# 3NF
+USER (userName, isEmployee)
+
+INVENTORY (productID, productName, price, qty)
+
+ORDER (orderID, userName†, billingINFO, shipINFO, hasShipped)
+
+FOREIGN KEY (userName) REFERENCES USER(userName)
+ORDER_CONTENTS (orderID, productID, orderQTY)
+
+FOREIGN KEY (orderID) REFERENCES ORDER (orderID)
+FOREIGN KEY (productID) REFERENCES INVENTORY (productID)
+SHOPPING_CART (userName†, productID†, orderQTY)
+
+FOREIGN KEY (userName) REFERENCES USER(userName),
+FOREIGN KEY (productID) REFERENCES INVENTORY(productID)
+SHOPPING_CART_TOTAL (userName†, total)
+
+FOREIGN KEY (userName) REFERENCES USER(userName)
