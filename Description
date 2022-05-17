@@ -1,0 +1,54 @@
+User
+	Inheritance:
+Customer: Customer is in a “is-a” inheritance with User. The customer is a user.
+Owner: Employee is in a “is-a” inheritance with User. The Employee is also a user.
+	Attributes:
+User_id: Unique identifier
+
+Customer
+	Relationships:
+Shopping Cart: Each customer has one shopping cart. (1, 1)
+Order: Each customer can make many orders. (1,m)
+	Attributes:
+User_id: (Unique identifier) (foreign key)
+
+
+Employee
+	Relationships:
+Manage: The Employees manage the inventory. (1,1)
+	Attributes:
+User_id: (unique identifier) (foreign key)
+
+
+Shopping Cart
+	Relationships:
+Has: Each shopping cart has a customer. There can be many customers for that shopping cart. (1,m)
+Order: many orders go through a shopping cart. (1,m)
+	
+           Attributes:
+Total cost
+Quantity 
+Product_ID (Primary Key) (foreign key)
+
+
+Inventory 
+	Relationships:
+Employee is a user  who manages inventory. (1,m)
+Order: Items are pulled from one inventory (1,1)
+	Attributes:
+Prouduct_ID:  (primary key)
+Quantity available 
+Price per product
+Product name
+
+
+Order
+	Attributes:
+order_id (primary key)
+user_id
+Product_id
+Billing info
+Shipping info
+Quantity
+orderNotes
+Contents of order
